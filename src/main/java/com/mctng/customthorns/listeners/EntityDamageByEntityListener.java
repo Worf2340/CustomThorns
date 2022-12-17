@@ -40,7 +40,7 @@ public class EntityDamageByEntityListener implements Listener {
             if (damage > 0) {
                 if (!(this.plugin.damageBuffMap.containsKey(player.getUniqueId()))) {
                     this.plugin.damageBuffMap.put(player.getUniqueId(), damage);
-                    player.sendMessage(ChatColor.BLUE + "You got a " + damage + " buff!");
+                    //player.sendMessage(ChatColor.BLUE + "You got a " + damage + " buff!");
                 }
             }
 
@@ -54,13 +54,13 @@ public class EntityDamageByEntityListener implements Listener {
 
                 Player player = (Player) event.getDamager();
 
-                player.sendMessage(ChatColor.LIGHT_PURPLE + "Original Damage: " + originalDamage);
-                player.sendMessage(ChatColor.LIGHT_PURPLE + "Damage Buff: " + damageBuff);
+                //player.sendMessage(ChatColor.LIGHT_PURPLE + "Original Damage: " + originalDamage);
+                //player.sendMessage(ChatColor.LIGHT_PURPLE + "Damage Buff: " + damageBuff);
 
                 event.setDamage(this.plugin.damageBuffMap.get(event.getDamager().getUniqueId()) + originalDamage);
 
                 this.plugin.damageBuffMap.remove(event.getDamager().getUniqueId());
-                player.sendMessage(ChatColor.LIGHT_PURPLE + "Final Damage: " + event.getFinalDamage());
+                //player.sendMessage(ChatColor.LIGHT_PURPLE + "Final Damage: " + event.getFinalDamage());
 
             }
         }
